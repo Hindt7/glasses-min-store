@@ -88,10 +88,13 @@ export default function Item({ product }) {
 
   return (
     <>
-      <div className="mb-4 flex justify-between gap-2">
-        <div className="max-h-80 min-h-40 max-w-80 min-w-40 flex-auto bg-yellow-100 mr-2"></div>
-        <div className="flex flex-col justify-between pb-2">
+      <div className="mb-4 flex gap-2 md:flex-row">
+        <img className="w-30 h-30 lg:min-h-45 lg:min-w-80 mr-2 bg-gray-100 rounded object-scale-down" src={product.image} alt={product.title} />
+
+
+        <div className="flex flex-col justify-between pb-2 lg:pl-15 lg:py-2">
           <div className="text-lg">{product.title}</div>
+          <p className={ isValidInput ? "invisible" : "text-red-700"}>Please enter a number between 1 to 100.</p>
 
           <div className="flex max-w-[8rem] items-center">
             <button
@@ -144,11 +147,10 @@ export default function Item({ product }) {
               </svg>
             </button>
           </div>
-          <p className={ isValidInput ? "invisible" : "text-red-700"}>Please enter a number between 1 to 100.</p>
         </div>
-        <div className="flex flex-col justify-between pb-2">
+        <div className="flex flex-col justify-between pb-2 lg:min-w-30 lg:py-2">
           <div className="text-right text-lg">$ {product.price}</div>
-          <button className="border-b-1 pb-0.5 cursor-pointer" onClick={handleRemove}>X Remove</button>
+          <button className="border-b-1 pb-0.5 cursor-pointer lg:max-w-20 self-end" onClick={handleRemove}>X Remove</button>
         </div>
       </div>
       <div className="w-full h-0.5 bg-gray-300 mb-4"></div>

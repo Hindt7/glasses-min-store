@@ -1,1 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 @import "tailwindcss";
+
+@theme {
+    --font-display: "Montserrat", ui-sans-serif, sans-serif;
+    --font-special: "Roboto Mono", ui-monospace, monospace; 
+    --color-deepblue: #144667;
+    --color-mediumblue: #516C97;
+    --color-offwhite: #F6F4ED;
+    --color-blush: #E4D3D1;
+}
+
+@layer components {
+    .btn-primary {
+      border-radius: var(--radius-lg);
+      background-color: var(--color-deepblue);
+      padding-inline: --spacing(5);
+      padding-block: --spacing(2);
+      font-family: var(--font-display);
+      font-weight: var(--font-weight-medium);
+      color: var(--color-offwhite);
+      box-shadow: var(--shadow-md);
+      &:hover {
+        @media (hover: hover) {
+            outline: 2px solid var(--color-deepblue);
+            outline-offset: -2px;
+            background-color: var(--color-blush);
+            color: var(--color-deepblue);
+        }
+      }
+    }
+  }

@@ -13,8 +13,9 @@ export default function ShoppingBag() {
   const calculateTotalPrice = () => {
     let calPrice = 0;
     for (let i = 0; i < bag.length; i++) {
-      if (bag[i].quantity > 0) {
-        calPrice += bag[i].quantity * bag[i].price;
+      let itemQuantity = Number(bag[i].quantity);
+      if (Number.isInteger(itemQuantity) && itemQuantity > 0 && itemQuantity < 101) {
+        calPrice += itemQuantity * bag[i].price;
       } else {
         readyToProceed = false;
         return 0; // Exit early if any item's quantity is invalid
