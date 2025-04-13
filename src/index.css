@@ -20,6 +20,7 @@
       font-weight: var(--font-weight-medium);
       color: var(--color-offwhite);
       box-shadow: var(--shadow-md);
+      cursor: pointer;
       &:hover {
         @media (hover: hover) {
             outline: 2px solid var(--color-deepblue);
