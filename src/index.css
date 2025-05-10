@@ -30,4 +30,18 @@
         }
       }
     }
+
+    .bag-btn {
+      cursor: pointer;
+      border-radius: 1.5rem; /* Rounded corners */
+      border: 2px solid var(--mediumblue); /* Initial border color */
+      padding: 0.5rem 1rem; /* Padding for the button */
+      transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, border-color 0.2s ease-in-out;
+    }
+    
+    .bag-btn:hover {
+      border-color: var(--deepblue); /* Change border color on hover/focus */
+      box-shadow: 0 0.75em 0.75em -0.4em var(--color-blush); /* Blush-colored shadow */
+      transform: translateY(-0.25rem); /* Raise the button slightly */
+    }
   }

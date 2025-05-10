@@ -1,6 +1,7 @@
 import { Link, Outlet } from "react-router-dom";
 import { BagProvider } from "./appContext.jsx";
 import logo from "./assets/logo_md.png";
+import bagIcon from "./assets/icons8-shopping-bag-48-blue-filled.png";
 
 export default function App() {
   //const [bag, setBag] = useState({});
@@ -13,8 +14,7 @@ export default function App() {
           className="w-full min-h-[80px] md:px-30 flex flex-row justify-between md:pt-6"
         >
           <Link to={"/"}>
-          <img src={logo} alt="Logo" className="h-16 cursor-pointer"/>
-
+            <img src={logo} alt="Logo" className="h-16 cursor-pointer" />
           </Link>
           <div className="flex justify-around">
             <Link
@@ -25,7 +25,10 @@ export default function App() {
             </Link>
             <div className="self-center">
               <Link to={"shoppingbag/"}>
-                <button className="btn-primary md:text-xl md:py-3">Your Bag</button>
+                <button className="bag-btn cursor-pointer rounded-3xl border-2 border-mediumblue py-2 px-4 hover:border-deepblue">
+
+                  <img src={bagIcon} alt="Bag" className="h-6"/>
+                </button>
               </Link>
             </div>
           </div>
